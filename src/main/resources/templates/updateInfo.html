@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Info</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="text-center">
+        <h3>Service Info</h3>
+    </div>
+    <br />
+
+    <form  th:object="${member}" th:action="@{/updateInfo}" th:method="POST">
+        <table class="table table-bordered"
+               style="width: 100%; font-size: 16px;">
+            <input type="hidden" class="form-control" th:field="*{id}" name="id"/>
+            <input type="hidden" class="form-control" th:value="*{member.memberId}" name="memberId"/>
+            <input type="hidden" class="form-control" th:value="*{provider.providerId}" name="providerId"/>
+            <input type="hidden" class="form-control" th:field="*{month}" name="month"/>
+
+            <tr>
+                <td>1</td>
+                <td><input type="text" class="form-control" th:field="*{d1}"/>
+                <td>2</td>
+                <td><input type="text" class="form-control" th:field="*{d2}" />
+                <td>3</td>
+                <td><input type="text" class="form-control" th:field="*{d3}" />
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td><input type="text" class="form-control" th:field="*{d4}"/>
+                <td>5</td>
+                <td><input type="text" class="form-control" th:field="*{d5}" />
+                <td>6</td>
+                <td><input type="text" class="form-control" th:field="*{d6}" />
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td><input type="text" class="form-control" th:field="*{d7}"/>
+                <td>8</td>
+                <td><input type="text" class="form-control" th:field="*{d8}" />
+                <td>9</td>
+                <td><input type="text" class="form-control" th:field="*{d9}" />
+            </tr>
+
+            <tr>
+                <td>10</td>
+                <td><input type="text" class="form-control" th:field="*{d10}"/>
+                <td>11</td>
+                <td><input type="text" class="form-control" th:field="*{d11}" />
+                <td>12</td>
+                <td><input type="text" class="form-control" th:field="*{d12}" />
+            </tr>
+
+            <tr>
+                <td>13</td>
+                <td><input type="text" class="form-control" th:field="*{d13}"/>
+                <td>14</td>
+                <td><input type="text" class="form-control" th:field="*{d14}" />
+                <td>15</td>
+                <td><input type="text" class="form-control" th:field="*{d15}" />
+            </tr>
+
+            <tr>
+                <td>16</td>
+                <td><input type="text" class="form-control" th:field="*{d16}"/>
+                <td>17</td>
+                <td><input type="text" class="form-control" th:field="*{d17}" />
+                <td>18</td>
+                <td><input type="text" class="form-control" th:field="*{d18}" />
+            </tr>
+
+            <tr>
+                <td>19</td>
+                <td><input type="text" class="form-control" th:field="*{d19}"/>
+                <td>20</td>
+                <td><input type="text" class="form-control" th:field="*{d20}" />
+                <td>21</td>
+                <td><input type="text" class="form-control" th:field="*{d21}" />
+            </tr>
+
+            <tr>
+                <td>22</td>
+                <td><input type="text" class="form-control" th:field="*{d22}"/>
+                <td>23</td>
+                <td><input type="text" class="form-control" th:field="*{d23}" />
+                <td>24</td>
+                <td><input type="text" class="form-control" th:field="*{d24}" />
+            </tr>
+
+            <tr>
+                <td>25</td>
+                <td><input type="text" class="form-control" th:field="*{d25}"/>
+                <td>26</td>
+                <td><input type="text" class="form-control" th:field="*{d26}" />
+                <td>27</td>
+                <td><input type="text" class="form-control" th:field="*{d27}" />
+            </tr>
+
+            <tr>
+                <td>28</td>
+                <td><input type="text" class="form-control" th:field="*{d28}"/>
+                <td>29</td>
+                <td><input type="text" class="form-control" th:field="*{d29}" />
+                <td>30</td>
+                <td><input type="text" class="form-control" th:field="*{d30}" />
+            </tr>
+
+            <tr>
+                <td>31</td>
+                <td><input type="text" class="form-control" th:field="*{d31}"/>
+            </tr>
+
+        </table>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-lg">Update</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

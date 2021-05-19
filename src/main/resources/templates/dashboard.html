@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>DashBoard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script
+            src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script
+            src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#memberLists').DataTable();
+        });
+    </script>
+
+</head>
+<body>
+
+<header th:replace="/header.html"></header>
+
+<div th:if="${message != null}">
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+			<span th:utext="${message}"
+                  style="color: blue; font-size: 18px; font-weight: bold;"></span>
+        <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+
+
+</br>
+
+<div style="padding: 10px">
+    <div class="text-center">
+        <h3>Member List</h3>
+    </div>
+
+    <br/>
+    <div class="float-right">
+        <form class="form-inline" th:action="@{/dashboard}" method="POST">
+            <label style="font-weight: bold; padding-right: 20px;">
+                Data for the month of <!-- <span th:utext="${month}"></span>-->
+            </label>
+            <select class="form-control" name="month">
+                <option><span th:utext="${month}"></span></option>
+                <option value="Jan">Jan</option>
+                <option value="Feb">Feb</option>
+                <option value="Mar">Mar</option>
+                <option value="Apr">Apr</option>
+                <option value="May">May</option>
+                <option value="Jun">Jun</option>
+                <option value="Jul">Jul</option>
+                <option value="Aug">Aug</option>
+                <option value="Sep">Sep</option>
+                <option value="Oct">Oct</option>
+                <option value="Nov">Nov</option>
+                <option value="Dec">Dec</option>
+            </select>
+            <label style="font-weight: bold; padding-left: 20px;">
+                for the year 2021
+            </label>
+            <div style="padding-left: 50px;">
+                <button type="submit" class="btn btn-primary" style="width:120px;">Show</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div style="width: 100%">
+
+        <table id="memberLists" class="table table-striped table-bordered"
+               style="width: 100%">
+            <thead class="thead justify-content-center">
+            <tr>
+                <td>Member Name</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+<!--                <td>Subtotal</td>-->
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="mem: ${memberList}" >
+<!--                th:with="subtotal=0">-->
+                <td>
+                    <a th:href="@{/getInfo(Id=${mem.id})}" th:text="${mem.getMember().memberName}"/>
+                </td>
+                <td th:text="${mem.d1}" th:if="${mem.d1 !=null}?subtotal+1"/>
+
+                <td th:text="${mem.d2}"/>
+                <td th:text="${mem.d3}"/>
+                <td th:text="${mem.d4}"/>
+                <td th:text="${mem.d5}"/>
+                <td th:text="${mem.d6}"/>
+                <td th:text="${mem.d7}"/>
+                <td th:text="${mem.d8}"/>
+                <td th:text="${mem.d9}"/>
+                <td th:text="${mem.d10}"/>
+                <td th:text="${mem.d11}"/>
+                <td th:text="${mem.d12}"/>
+                <td th:text="${mem.d13}"/>
+                <td th:text="${mem.d14}"/>
+                <td th:text="${mem.d15}"/>
+                <td th:text="${mem.d16}"/>
+                <td th:text="${mem.d17}"/>
+                <td th:text="${mem.d18}"/>
+                <td th:text="${mem.d19}"/>
+                <td th:text="${mem.d20}"/>
+                <td th:text="${mem.d21}"/>
+                <td th:text="${mem.d22}"/>
+                <td th:text="${mem.d23}"/>
+                <td th:text="${mem.d24}"/>
+                <td th:text="${mem.d25}"/>
+                <td th:text="${mem.d26}"/>
+                <td th:text="${mem.d27}"/>
+                <td th:text="${mem.d28}"/>
+                <td th:text="${mem.d29}"/>
+                <td th:text="${mem.d30}"/>
+                <td th:text="${mem.d31}"/>
+<!--                <td th:text="${subtotal}"/>-->
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</body>
+</html>
